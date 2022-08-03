@@ -56,7 +56,7 @@ plugins:
 
 author:
   name   : "Hunter"
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/bio-photo.jpeg"
   bio    : "keep blogging."
   links:
     - label: "GitHub"
@@ -68,10 +68,6 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/huntersman"
-
-toc: true
-toc_label: "My Table of Contents"
-toc_icon: "cog"
 
 defaults:
   # _posts
