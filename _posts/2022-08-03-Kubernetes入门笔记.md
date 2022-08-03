@@ -1,5 +1,8 @@
 ---
 title: "K8s入门笔记"
+toc: true
+toc_label: "My Table of Contents"
+toc_icon: "cog"
 categories:
   - Kubernetes
 tags:
