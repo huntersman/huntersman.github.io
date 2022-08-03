@@ -3,6 +3,7 @@ title: "K8s入门笔记"
 toc: true
 toc_label: "目录"
 toc_icon: "cog"
+toc_sticky: true
 categories:
   - Kubernetes
 tags:
