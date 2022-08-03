@@ -69,6 +69,10 @@ footer:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/huntersman"
 
+toc: true
+toc_label: "My Table of Contents"
+toc_icon: "cog"
+
 defaults:
   # _posts
   - scope:
