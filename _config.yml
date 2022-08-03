@@ -20,6 +20,7 @@ github_username: huntersman
 locale: zh-CN
 minimal_mistakes_skin: sunrise
 search: true
+logo: "/assets/images/icons8-super-mario-88.png"
 
 # Build settings
 markdown: kramdown
