@@ -17,6 +17,11 @@ tags:
 我个人的理解是K8s是一个容器管理平台。当我们需要容器化部署我们的项目时，可以使用docker，但是当服务器集群复杂的时候，如上百台服务器组成集群，版本更新时需要操作上百台服务器的docker，当线上遇到问题，需要进行回滚时，也会非常麻烦。这种情况下docker就有点力不从心了，需要K8s对容器进行管理。
 
 # 为什么需要K8s
+<figure>
+	<a href="/assets/images/container_evolution.svg">
+    <img src="/assets/images/container_evolution.svg">
+  </a>
+</figure>
 
 {% raw %}<img src="{{ site.url }}{{ site.baseurl }}assets/images/container_evolution.svg" alt="">{% endraw %}
 
@@ -41,7 +46,11 @@ K8s提供:
 - 密钥与配置管理
 
 # K8s架构
-{% raw %}<img src="{{ site.url }}{{ site.baseurl }}assets/images/componets-of-kubernetes.svg" alt="">{% endraw %}
+<figure>
+	<a href="assets/images/componets-of-kubernetes.svg">
+    <img src="assets/images/componets-of-kubernetes.svg">
+  </a>
+</figure>
 
 # 使用Kubeadm搭建K8s集群
 
