@@ -1,5 +1,6 @@
 ---
 title: "CentOS升级Linux内核"
+last_modified_at: 2022-08-19T16:20:02-05:00
 categories:
   - CentOS
 tags:
@@ -25,7 +26,8 @@ yum --disablerepo="*" --enablerepo="elrepo-kernel" list available
 ```bash
 yum -y --enablerepo=elrepo-kernel install kernel-ml
 ```
-5. 设置Grub启动项
+5. 设置Grub启动项  
+   内核升级完毕后，目前内核还是默认的版本，如果此时直接执行reboot命令，重启后使用的内核版本还是默认的3.10，不会使用新的4.12.4，首先，我们可以通过命令`awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg`查看默认启动顺序。
 ```bash
 vim /etc/default/grub
 ```
