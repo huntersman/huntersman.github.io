@@ -25,10 +25,11 @@ yum --disablerepo="*" --enablerepo="elrepo-kernel" list available
 ```bash
 yum -y --enablerepo=elrepo-kernel install kernel-ml
 ```
-5. 设置Grub启动项  
+5. 设置Grub启动项
 ```bash
 vim /etc/default/grub
-
+```
+```text
 GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
 GRUB_DEFAULT=saved  #这里把saved改为0即可
