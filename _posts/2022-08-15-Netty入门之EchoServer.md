@@ -11,9 +11,9 @@ Netty是知名的Java高性能网络编程框架，通过学习和使用netty，
 
 # Netty核心组件
 - Channel
-- Callback（回调）
+- Callback
 - Future
-- 事件和ChannelHandler
+- Event和ChannelHandler
 ## Channel
 Channel 是 NIO 基本的结构。它代表了一个用于连接到实体如硬件设备、文件、网络套接字或程序组件,能够执行一个或多个不同的 I/O 操作（例如读或写）的开放连接。
 
