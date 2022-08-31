@@ -5,9 +5,9 @@ toc_label: "目录"
 toc_icon: "cog"
 toc_sticky: true
 categories:
-  - NFS
+  - Netty
 tags:
-  - NFS
+  - Netty
 ---
 
 转自[华为开发者论坛](https://developer.huawei.com/consumer/cn/forum/topicview?tid=0201121578210430057&fid=23)
