@@ -1,5 +1,6 @@
 ---
 title: "CentOS下载RPM包"
+last_modified_at: 2022-09-8T9:06:02-05:00
 categories:
   - CentOS
 tags:
@@ -13,6 +14,10 @@ yum install yum-utils
 ```
 ```bash
 yumdownloader --resolve 软件包名称
+```
+或者也可以使用
+```bash
+yum install --downloadonly --downloaddir=/tmp 包名
 ```
 再使用rpm命令安装
 ```bash
