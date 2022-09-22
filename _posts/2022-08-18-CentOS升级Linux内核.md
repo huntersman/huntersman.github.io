@@ -1,6 +1,6 @@
 ---
 title: "CentOS升级Linux内核"
-last_modified_at: 2022-08-19T16:20:02-05:00
+last_modified_at: 2022-09-22T16:20:02-05:00
 categories:
   - CentOS
 tags:
@@ -44,5 +44,9 @@ GRUB_CMDLINE_LINUX="rhgb quiet"
 grub2-mkconfig -o /boot/grub2/grub.cfg
 reboot 
 ```
-
+7. 卸载旧内核（可选）
+```bash
+rpm -qa | grep kernel
+yum remove 内核名
+```
 转自[博客](https://blog.51cto.com/zlyang/4903964)
