@@ -62,5 +62,5 @@ jobs: # workflow中的job
 ```
 github上提供了许多现成的action，可以直接拿来用，并且也给出了使用示例。
 
-我们需要做的就是在项目里的设置里配置一下DockerHub的用户名与Token。
+我们需要做的就是在项目里的设置里配置一下DockerHub的用户名与Token，之后在项目的根目录下创建Dockerfile就行了。
 ![alt]({{ site.url }}{{ site.baseurl }}/assets/images/GitHubActions.png)
