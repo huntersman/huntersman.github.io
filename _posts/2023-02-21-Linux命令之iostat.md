@@ -1,5 +1,5 @@
 ---
-title: "iostat查看系统IO"
+title: "Linux命令之iostat"
 categories:
   - Linux
 tags:
