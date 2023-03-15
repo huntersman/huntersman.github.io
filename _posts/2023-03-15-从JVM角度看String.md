@@ -72,7 +72,7 @@ class Memory{
 }
 ```
 
-![QQ截图20210429162508.jpg](https://www.hualigs.cn/image/608a6d78cc743.jpg)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/JVMAndString.jpg)
 
 # 字符串拼接操作
 
@@ -199,7 +199,7 @@ class Memory{
     System.out.println(s3 == s4);//true
 ```
 
-![Snipaste_2021-04-30_11-05-34.png](https://www.hualigs.cn/image/608b740822d15.jpg)
+![alt]({{ site.url }}{{ site.baseurl }}/assets/images/JVMAndString2.jpg)
 
 拓展：
 
