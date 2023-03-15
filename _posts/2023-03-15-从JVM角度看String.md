@@ -1,5 +1,9 @@
 ---
 title: "从JVM角度看Java String"
+toc: true
+toc_label: "目录"
+toc_icon: "cog"
+toc_sticky: true
 categories:
   - JVM
 tags:
