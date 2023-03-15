@@ -33,13 +33,13 @@ public class StringExer{
 通过debug功能查看String常量池中的数量可以发现这一点
 
 ```java
-        System.out.println("1");//2330
-        System.out.println("2");//2332
-        System.out.println("3");//2333
+    System.out.println("1");//2330
+    System.out.println("2");//2332
+    System.out.println("3");//2333
 
-        System.out.println("1");//2334
-        System.out.println("2");//2334
-        System.out.println("3");//2334
+    System.out.println("1");//2334
+    System.out.println("2");//2334
+    System.out.println("3");//2334
 ```
 
 - String的String Pool是一个固定大小的Hashtable，如果放进pool的string非常多，就会造成hash冲突严重，从而导致链表很长，造成调用intern时性能大幅下降。
@@ -77,54 +77,54 @@ class Memory{
 3. 如果拼接的结果调用intern()方法，则主动将常量池中还没有的字符串对象放入池中，并返回此对象地址。
 
 ```java
-        String s1 = "javaEE";
-        String s2 = "hadoop";
-        String s3 = "javaEEhadoop";
-        String s4 = "javaEE" + "hadoop";//编译期优化，等同于"javaEEhadoop"（可以看idea反编译结果）
-       	//如果拼接符号前后出现了一个变量，则相当于在堆空间中new String() 	
-	    String s5 = s1 + "hadoop";
-        String s6 = "javaEE" + s2;
-        String s7 = s1 + s2;
+    String s1 = "javaEE";
+    String s2 = "hadoop";
+    String s3 = "javaEEhadoop";
+    String s4 = "javaEE" + "hadoop";//编译期优化，等同于"javaEEhadoop"（可以看idea反编译结果）
+    //如果拼接符号前后出现了一个变量，则相当于在堆空间中new String() 	
+    String s5 = s1 + "hadoop";
+    String s6 = "javaEE" + s2;
+    String s7 = s1 + s2;
 
-        System.out.println(s3 == s4);//true
-        System.out.println(s3 == s5);//false
-        System.out.println(s3 == s6);//false
-        System.out.println(s3 == s7);//false
-        System.out.println(s5 == s6);//false
-        System.out.println(s5 == s7);//false
-        System.out.println(s6 == s7);//false
-	   //intern()方法是如果常量池中没有就创建并返回地址，如果存在，则直接返回地址
-        String s8 = s6.intern();
-        System.out.println(s3 == s8);//true
+    System.out.println(s3 == s4);//true
+    System.out.println(s3 == s5);//false
+    System.out.println(s3 == s6);//false
+    System.out.println(s3 == s7);//false
+    System.out.println(s5 == s6);//false
+    System.out.println(s5 == s7);//false
+    System.out.println(s6 == s7);//false
+   //intern()方法是如果常量池中没有就创建并返回地址，如果存在，则直接返回地址
+    String s8 = s6.intern();
+    System.out.println(s3 == s8);//true
 
-        final String s9 = "javaEE";//被final修饰的视为常量
-        final String s11 = "hadoop";
-        String s10 = s9 + s11;
-        System.out.println(s10 == s3);//true
+    final String s9 = "javaEE";//被final修饰的视为常量
+    final String s11 = "hadoop";
+    String s10 = s9 + s11;
+    System.out.println(s10 == s3);//true
 ```
 
 如果用String做字符串拼接，通过查看字节码可以发现，每次都会创建新的StringBuilder和String对象，而且还涉及到GC，所以会非常耗时。（在实际开发中建议不要使用String拼接）
 
 ```java
-        long startTime = System.currentTimeMillis();
-        String s = new String();
-        for (int i = 0; i < 100000; i++) {
-            s = s + "a";
-        }
-        long endTime = System.currentTimeMillis();
-        System.out.println("String拼接时间;" + (endTime - startTime));//5107
+    long startTime = System.currentTimeMillis();
+    String s = new String();
+    for (int i = 0; i < 100000; i++) {
+        s = s + "a";
+    }
+    long endTime = System.currentTimeMillis();
+    System.out.println("String拼接时间;" + (endTime - startTime));//5107
 ```
 
 可以发现采用StringBuilder的方式，速度远快于String，因为自始至终只有StringBuilder这一个对象。
 
 ```java
-        long startTime1 = System.currentTimeMillis();
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < 100000; i++) {
-            sb.append("a");
-        }
-        long endTime1 = System.currentTimeMillis();
-        System.out.println("StringBuilder拼接时间;" + (endTime1 - startTime1));//4
+    long startTime1 = System.currentTimeMillis();
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < 100000; i++) {
+        sb.append("a");
+    }
+    long endTime1 = System.currentTimeMillis();
+    System.out.println("StringBuilder拼接时间;" + (endTime1 - startTime1));//4
 ```
 
 查看StringBuilder源码，StringBuilder的默认构造器指定默认的char数组大小为16，当大小不足的时候会进行扩容，我们可以手动指定大小做进一步优化。
@@ -169,14 +169,14 @@ class Memory{
 ```
 
 ```java
-        long startTime2 = System.currentTimeMillis();
-	   //指定一个初始大小
-        StringBuilder sb1 = new StringBuilder(100000);
-        for (int i = 0; i < 100000; i++) {
-            sb1.append("a");
-        }
-        long endTime2 = System.currentTimeMillis();
-        System.out.println("优化后的StringBuilder拼接时间;" + (endTime2 - startTime2));//4。运行时间没有明显优化是因为数据量不够大，效果不明显
+    long startTime2 = System.currentTimeMillis();
+   //指定一个初始大小
+    StringBuilder sb1 = new StringBuilder(100000);
+    for (int i = 0; i < 100000; i++) {
+        sb1.append("a");
+    }
+    long endTime2 = System.currentTimeMillis();
+    System.out.println("优化后的StringBuilder拼接时间;" + (endTime2 - startTime2));//4。运行时间没有明显优化是因为数据量不够大，效果不明显
 ```
 
 # intern()
@@ -184,15 +184,15 @@ class Memory{
 确保字符串在内存里只有一份拷贝，节约内存空间，加快字符串操作任务的执行速度。注意，这个值会被存放在字符串内部池。如果字符串中已经有了，返回对象的地址。如果没有，则会把对象的引用地址复制一份，放入常量池，并返回常量池中的引用地址。当遇到大量重复字符串的时候，使用intern可以节约空间，加快执行速度。
 
 ```java
-        String s = new String("1");//在常量池中创建“1”对象，并且s指向“1”
-        s.intern();//并没有效果
-        String s2 = "1";//常量池“1”的地址
-        System.out.println(s == s2);//false
+    String s = new String("1");//在常量池中创建“1”对象，并且s指向“1”
+    s.intern();//并没有效果
+    String s2 = "1";//常量池“1”的地址
+    System.out.println(s == s2);//false
 
-        String s3 = new String("1") + new String("1");	//相当于在堆空间创造了“11”
-        s3.intern();//在字符串常量池中生成“11”
-        String s4 = "11";
-        System.out.println(s3 == s4);//true
+    String s3 = new String("1") + new String("1");	//相当于在堆空间创造了“11”
+    s3.intern();//在字符串常量池中生成“11”
+    String s4 = "11";
+    System.out.println(s3 == s4);//true
 ```
 
 ![Snipaste_2021-04-30_11-05-34.png](https://www.hualigs.cn/image/608b740822d15.jpg)
