@@ -10,6 +10,8 @@ tags:
   - JVM
 ---
 
+<!--more-->
+
 # String基本特性
 ## 不可变性
 ```java
@@ -97,7 +99,7 @@ class Memory{
     System.out.println(s5 == s6);//false
     System.out.println(s5 == s7);//false
     System.out.println(s6 == s7);//false
-   //intern()方法是如果常量池中没有就创建并返回地址，如果存在，则直接返回地址
+    //intern()方法是如果常量池中没有就创建并返回地址，如果存在，则直接返回地址
     String s8 = s6.intern();
     System.out.println(s3 == s8);//true
 
