@@ -8,6 +8,8 @@ tags:
 
 fincore是一款Linux命令行工具，可以用来查看指定目录下的内核页缓存。
 
+<!--more-->
+
 ## 安装
 由于CentOS上未找到相关RPM包，故通过源码编译的方式安装fincore
 ```bash
