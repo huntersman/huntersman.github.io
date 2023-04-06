@@ -7,7 +7,10 @@ tags:
   - Docker
 ---
 
-我们可以使用Sonatype Nexus3搭建私有化仓库，管理maven、docker、yum等。  
+我们可以使用Sonatype Nexus3搭建私有化仓库，管理maven、docker、yum等。
+
+<!--more-->
+
 转载自[gitbook](https://yeasy.gitbook.io/docker_practice/repository/nexus3_registry)
 # 启动Nexus容器
 ```bash
