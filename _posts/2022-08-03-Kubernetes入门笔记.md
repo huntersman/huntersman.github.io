@@ -10,6 +10,8 @@ tags:
   - Kubernetes
 ---
 
+<!--more-->
+
 # K8s介绍
 
 以下是[官网](https://kubernetes.io/)对K8s的介绍
