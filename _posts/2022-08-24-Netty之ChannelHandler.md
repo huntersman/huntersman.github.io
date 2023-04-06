@@ -10,6 +10,8 @@ tags:
   - Netty
 ---
 
+<!--more-->
+
 转自[华为开发者论坛](https://developer.huawei.com/consumer/cn/forum/topicview?tid=0201121578210430057&fid=23)
 
 ChannelHandler（管道处理器）其工作模式类似于Java
