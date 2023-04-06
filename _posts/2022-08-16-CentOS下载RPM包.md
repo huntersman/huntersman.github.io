@@ -6,9 +6,12 @@ categories:
 tags:
   - CentOS
 ---
+
+<!--more-->
+
 有的时候服务器无法访问外网，不能使用yum命令下载RPM软件包，这种时候可以通过在其他服务器下载相关的RPM软件包再传到该服务器使用RPM命令进行安装。
 
-我们需要在服务器上安装Yumdownloader
+我们需要在服务器上安装`yumdownloader`
 ```bash
 yum install yum-utils
 ```
