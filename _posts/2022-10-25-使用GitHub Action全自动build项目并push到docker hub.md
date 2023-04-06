@@ -7,6 +7,8 @@ tags:
   - CI/CD
 ---
 
+<!--more-->
+
 使用GitHub Actions可以帮助我们进行CI/CD。
 
 以自动化build docker image为例。
