@@ -7,6 +7,8 @@ tags:
   - Netty
 ---
 
+<!--more-->
+
 Netty是知名的Java高性能网络编程框架，通过学习和使用netty，我们可以编写出支持超过10万并发量的Java网络服务器
 
 # Netty核心组件
