@@ -6,6 +6,8 @@ tags:
   - Linux
 ---
 
+<!--more-->
+
 > iptables是运行在用户空间的应用软件，通过控制Linux内核netfilter模块，来管理网络数据包的处理和转发。
 
 清空所有规则
