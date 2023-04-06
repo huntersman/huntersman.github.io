@@ -6,6 +6,8 @@ tags:
   - CentOS
 ---
 
+<!--more-->
+
 本文转载自[techglimpse](https://techglimpse.com/failed-metadata-repo-appstream-centos-8)
 
 # 问题介绍
